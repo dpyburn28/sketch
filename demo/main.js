@@ -13,6 +13,12 @@ point.style = {
     fill: 'blue'
 }
 
+const point2 = new sketch.Point(300, 300);
+figures.push(point2);
+point2.style = {
+    fill: 'red'
+}
+
 const line = new sketch.Line(point, 45, 100);
 figures.push(line);
 line.style = {
@@ -41,6 +47,22 @@ shape.style = {
     stroke: 'black',
     weight: 1,
     fill: 'white',
+}
+
+const arc = new sketch.Arc(point, 50, 0, Math.PI * 2);
+figures.push(arc);
+arc.style = {
+    stroke: 'black',
+    weight: 1,
+    fill: 'none',
+}
+
+const box = new sketch.Box(point2, 100, 100);
+figures.push(box);
+box.style = {
+    stroke: 'black',
+    weight: 5,
+    fill: 'none',
 }
 
 figures.forEach(figure => {

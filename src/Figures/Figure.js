@@ -10,9 +10,17 @@ export default class Figure {
         }
     }
     setStyle(ctx) {
-        ctx.strokeStyle = this.style.stroke;
+        if (this.style.stroke === 'none') {
+            ctx.strokeStyle = 'transparent';
+        } else {
+            ctx.strokeStyle = this.style.stroke;
+        }
+        if (this.style.fill === 'none') {
+            ctx.fillStyle = 'transparent';
+        } else {
+            ctx.fillStyle = this.style.fill;
+        }
         ctx.lineWidth = this.style.weight;
-        ctx.fillStyle = this.style.fill;
     }
 }
 

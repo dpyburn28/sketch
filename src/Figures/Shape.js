@@ -2,7 +2,7 @@ import { Figure, Point, Line, Path } from "./Figures.js";
 
 export default class Shape extends Figure {
     constructor(path) {
-        super();
+        super("shape");
         this.path = path;
     }
 
