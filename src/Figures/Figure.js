@@ -9,5 +9,10 @@ export default class Figure {
             weight: 1
         }
     }
+    setStyle(ctx) {
+        ctx.strokeStyle = this.style.stroke;
+        ctx.lineWidth = this.style.weight;
+        ctx.fillStyle = this.style.fill;
+    }
 }
 

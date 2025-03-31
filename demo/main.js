@@ -5,11 +5,14 @@ canvas.backgroundColor = 'gray';
 canvas.fullscreen();
 console.log(canvas);
 
-const point = new sketch.Point(10, 10, 10);
+const point = new sketch.Point(100, 100);
+point.draw(canvas.ctx);
 
-canvas.ctx.beginPath();
-canvas.ctx.arc(point.x, point.y, point.r, 0, 2 * Math.PI);
-canvas.ctx.fill();
+const line = new sketch.Line(point, 45, 100);
+line.draw(canvas.ctx);
+
+const line2 = new sketch.Line(line.end, 5, 100);
+const path = new sketch.Path([line, line2]);
+path.draw(canvas.ctx);
 
 console.log(point);
-
